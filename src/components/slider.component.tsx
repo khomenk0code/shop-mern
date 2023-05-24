@@ -34,7 +34,7 @@ const Slider: React.FC = () => {
             </Arrow>
             <Wrapper slideIndex={slideIndex}>
                 {sliderItems.map((item: ISlide) => (
-                    <Slide bg={item.bg}>
+                    <Slide bg={item.bg} key={item.id}>
                         <ImgContainer>
                             <Image src={item.img}/>
                         </ImgContainer>

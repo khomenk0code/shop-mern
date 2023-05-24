@@ -30,6 +30,12 @@ export const sliderItems = [
     },
 ];
 
+export interface ICategories {
+    id: number,
+    img: string,
+    title: string,
+}
+
 export const categories = [
     {
         id: 1,
@@ -48,6 +54,11 @@ export const categories = [
     },
 ];
 
+export interface IPopularProducts {
+    id: number,
+    img: string,
+}
+
 export const popularProducts = [
     {
         id:1,
@@ -55,7 +66,7 @@ export const popularProducts = [
     },
     {
         id:2,
-        img:"https://cdn.shopify.com/s/files/1/0101/4832/products/Angela_Natural_Tee.png?v=1606780388",
+        img:"https://www.pngplay.com/wp-content/uploads/4/Leather-Jacket-Transparent-Background.png",
     },
     {
         id:3,
@@ -63,7 +74,7 @@ export const popularProducts = [
     },
     {
         id:4,
-        img:"https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png",
+        img:"https://www.pngplay.com/wp-content/uploads/4/Leather-Jacket-Free-PNG.png",
     },
     {
         id:5,
@@ -75,7 +86,7 @@ export const popularProducts = [
     },
     {
         id:7,
-        img:"https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
+        img:"https://www.teashop.by/wp-content/uploads/svitshot-prosto-pej-chaj2-.png",
     },
     {
         id:8,
