@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleArrowLeft, faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
-import {sliderItems} from "../data";
-import {Slide} from "../data"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCircleArrowLeft, faCircleArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {ISlide, sliderItems} from "../data";
 
 type ArrowProps = {
     direction: "left" | "right";
@@ -21,7 +20,7 @@ const Slider: React.FC = () => {
     const [slideIndex, setSlideIndex] = useState(0)
 
     const handleClick = (direction: string): void => {
-        if(direction === "left") {
+        if (direction === "left") {
             setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
         } else {
             setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
@@ -31,10 +30,10 @@ const Slider: React.FC = () => {
     return (
         <Container>
             <Arrow direction="left" onClick={() => handleClick("left")}>
-                <FontAwesomeIcon icon={faCircleArrowLeft} size="2xl" color="#000" />
+                <FontAwesomeIcon icon={faCircleArrowLeft} size="2xl" color="#000"/>
             </Arrow>
             <Wrapper slideIndex={slideIndex}>
-                {sliderItems.map((item: Slide) => (
+                {sliderItems.map((item: ISlide) => (
                     <Slide bg={item.bg}>
                         <ImgContainer>
                             <Image src={item.img}/>
@@ -50,12 +49,12 @@ const Slider: React.FC = () => {
                                 Show now
                             </Button>
                         </InfoContainer>
-                    </Slide >
+                    </Slide>
                 ))}
 
             </Wrapper>
             <Arrow direction="right" onClick={() => handleClick("right")}>
-                <FontAwesomeIcon icon={faCircleArrowRight} size="2xl" color="#000" />
+                <FontAwesomeIcon icon={faCircleArrowRight} size="2xl" color="#000"/>
             </Arrow>
         </Container>
     );
@@ -101,12 +100,12 @@ const Slide = styled.div<SlideProps>`
   background-color: ${props => props.bg};
 `
 const ImgContainer = styled.div`
-flex: 1;
+  flex: 1;
   height: 100%;
 `
 
 const Image = styled.img`
-  height:80%;
+  height: 80%;
 `
 
 const InfoContainer = styled.div`
