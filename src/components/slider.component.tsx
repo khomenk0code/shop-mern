@@ -1,20 +1,61 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowLeft, faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {sliderItems} from "../data";
+import {Slide} from "../data"
 
 type ArrowProps = {
     direction: "left" | "right";
 };
 
+type SlideProps = {
+    bg: string;
+};
+
+type WrapperProps = {
+    slideIndex: number
+};
+
 const Slider: React.FC = () => {
+    const [slideIndex, setSlideIndex] = useState(0)
+
+    const handleClick = (direction: string): void => {
+        if(direction === "left") {
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
+        } else {
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
+        }
+    }
+
     return (
         <Container>
-            <Arrow direction="left">
-                <FontAwesomeIcon icon={faCircleArrowLeft} size="2xl" color="#fff7f7" />
+            <Arrow direction="left" onClick={() => handleClick("left")}>
+                <FontAwesomeIcon icon={faCircleArrowLeft} size="2xl" color="#000" />
             </Arrow>
-            <Arrow direction="right">
-                <FontAwesomeIcon icon={faCircleArrowRight} size="2xl" color="#fff7f7" />
+            <Wrapper slideIndex={slideIndex}>
+                {sliderItems.map((item: Slide) => (
+                    <Slide bg={item.bg}>
+                        <ImgContainer>
+                            <Image src={item.img}/>
+                        </ImgContainer>
+                        <InfoContainer>
+                            <InfoTitle>
+                                {item.title}
+                            </InfoTitle>
+                            <Desc>
+                                {item.desc}
+                            </Desc>
+                            <Button>
+                                Show now
+                            </Button>
+                        </InfoContainer>
+                    </Slide >
+                ))}
+
+            </Wrapper>
+            <Arrow direction="right" onClick={() => handleClick("right")}>
+                <FontAwesomeIcon icon={faCircleArrowRight} size="2xl" color="#000" />
             </Arrow>
         </Container>
     );
@@ -24,9 +65,16 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  background: #6495ed;
   position: relative;
+  overflow: hidden;
 `;
+
+const Wrapper = styled.div<WrapperProps>`
+  height: 100%;
+  display: flex;
+  transform: translateX(${props => props.slideIndex * -100}vw);
+  transition: all 1.5s ease;
+`
 
 const Arrow = styled.div<ArrowProps>`
   display: flex;
@@ -42,9 +90,48 @@ const Arrow = styled.div<ArrowProps>`
   opacity: 0.5;
   border-radius: 50%;
   height: 1rem;
+  z-index: 2;
 `;
 
+const Slide = styled.div<SlideProps>`
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: ${props => props.bg};
+`
+const ImgContainer = styled.div`
+flex: 1;
+  height: 100%;
+`
 
+const Image = styled.img`
+  height:80%;
+`
 
+const InfoContainer = styled.div`
+  flex: 1;
+  padding: 50px;
+`
+
+const InfoTitle = styled.h1`
+  font-size: 70px;
+  text-transform: uppercase;
+`
+const Desc = styled.p`
+  text-transform: uppercase;
+  margin: 50px 0;
+  font-weight: 600;
+  letter-spacing: 3px;
+
+`
+const Button = styled.button`
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+
+`
 
 export default Slider;
