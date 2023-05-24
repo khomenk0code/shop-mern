@@ -41,7 +41,7 @@ const Container = styled.div`
   height: 60px;
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   padding: 10px 20px;
   display: flex;
   align-items: center;
