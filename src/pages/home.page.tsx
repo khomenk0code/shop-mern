@@ -4,6 +4,8 @@ import Announcement from "../components/anonouncement.component";
 import Slider from "../components/slider.component";
 import Categories from "../components/categories.component";
 import Products from "../components/products.component";
+import Newsletter from "../components/newsletter.component";
+import Footer from "../components/footer";
 
 
 
@@ -15,6 +17,8 @@ const Home: React.FC = () => {
             <Slider/>
             <Categories/>
             <Products/>
+            <Newsletter/>
+            <Footer/>
         </div>
     );
 };

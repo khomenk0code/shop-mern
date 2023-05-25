@@ -48,12 +48,20 @@ const Title = styled.h2`
   margin-bottom: 1rem;
 `
 const Button = styled.button`
-  border: none;
+
   padding: .5rem;
-  background-color: #fff;
+  
+  background-color: rgba(255, 255, 255, .8);
   color: #808080;
   cursor: pointer;
   font-weight: 600;
+  border: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #fff;
+
+  }
 `
 
 export default CategoriesItem;
