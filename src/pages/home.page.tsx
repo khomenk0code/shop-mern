@@ -11,15 +11,15 @@ import Footer from "../components/footer";
 
 const Home: React.FC = () => {
     return (
-        <div>
+        <>
             <Announcement/>
-           <Navbar/>
+            <Navbar/>
             <Slider/>
             <Categories/>
             <Products/>
             <Newsletter/>
             <Footer/>
-        </div>
+        </>
     );
 };
 

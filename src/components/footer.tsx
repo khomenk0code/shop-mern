@@ -38,15 +38,15 @@ const Footer:React.FC  = () => {
                 <Right>
                     <Title>Contact</Title>
                     <ContactItem>
-                        <Room/>
+                        <Room style={{marginRight: "10px"}}/>
                         123 Main Street, Anytown, California, 12345
                     </ContactItem>
                     <ContactItem>
-                        <Phone/>
+                        <Phone style={{marginRight: "10px"}}/>
                     +1 235 89 78
                     </ContactItem>
                     <ContactItem>
-                        <MailOutline/>
+                        <MailOutline style={{marginRight: "10px"}}/>
                         contact@mern.dev
                     </ContactItem>
                     <Payment src="https://i.ibb.co/Qfvn4z6/payment.png"/>
@@ -64,7 +64,7 @@ const Left = styled.div`
 flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1.5rem;
 `
 const Logo = styled.h2`
 
@@ -85,6 +85,7 @@ width: 3rem;
   align-items: center;
   justify-content: center;
   margin-right: 1.5rem;
+  cursor: pointer;
 `
 
 const Center = styled.div`
@@ -113,8 +114,14 @@ const Right = styled.div`
   flex: 1;
   padding: 1.5rem;
 `
-const ContactItem = styled.div``
-const Payment = styled.img``
+const ContactItem = styled.div`
+    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+`
+const Payment = styled.img`
+    width: 50%;
+`
 
 export default Footer;
 
