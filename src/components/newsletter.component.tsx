@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {Send} from "@mui/icons-material";
+import {mobile} from "../utils/responsive";
 
 
 
@@ -27,18 +28,22 @@ const Container = styled.div`
   background-color: #fcf5f5;
   align-items: center;
   flex-direction: column;
+  margin: 3rem 0;
 `
 
 const Title = styled.h2`
 font-size: 70px;
   margin-top: 5rem;
   margin-bottom: 1.5rem;
+  ${mobile({ fontSize: "55px" })}
+  
 `
 
 const Description = styled.p`
     font-size: 24px;
   font-weight: 300;
   margin-bottom: 2rem;
+  ${mobile({ textAlign: "center" })}
 `
 const InputContainer = styled.div`
   width: 50%;
@@ -49,6 +54,7 @@ const InputContainer = styled.div`
   border: 1px solid #d3d3d3;
   align-items: center;
   margin-bottom: 8rem;
+  ${mobile({ width: "80%" })}
 `
 const Input = styled.input`
 border: none;

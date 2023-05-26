@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
-import Navbar from "../components/navbar.component";
+import Navbar from "../components/header.component";
 import Announcement from "../components/anonouncement.component";
 import Products from "../components/products.component";
 import Newsletter from "../components/newsletter.component";
 import Footer from "../components/footer";
-import {mobile} from "./responsive";
+import {mobile} from "../utils/responsive";
 
 const ProductList: React.FC = () => {
     return (

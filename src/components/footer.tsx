@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {Facebook, Instagram, MailOutline, Phone, Pinterest, Room, Twitter} from "@mui/icons-material";
+import {mobile} from "../utils/responsive";
 
 
 const Footer:React.FC  = () => {
@@ -57,7 +58,10 @@ const Footer:React.FC  = () => {
 };
 
 const Container = styled.footer`
+  margin-top: 4rem;
   display: flex;
+  ${mobile({ flexDirection: "column" })}
+
 `
 
 const Left = styled.div`
@@ -74,6 +78,7 @@ margin: 2rem 0;
 `
 const SocialContainer = styled.div`
   display: flex;
+  ${mobile({ justifyContent: "center" })}
 `
 const SocialIcon = styled.div`
 width: 3rem;
@@ -86,11 +91,14 @@ width: 3rem;
   justify-content: center;
   margin-right: 1.5rem;
   cursor: pointer;
+  
 `
 
 const Center = styled.div`
   flex: 1;
   padding: 1.5rem;
+  ${mobile({ display: "none" })}
+
 `
 
 const Title = styled.h3`
@@ -113,6 +121,8 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 1.5rem;
+  ${mobile({ backgroundColor: "#fff8f8" })}
+
 `
 const ContactItem = styled.div`
     margin-bottom: 1rem;
@@ -121,6 +131,7 @@ const ContactItem = styled.div`
 `
 const Payment = styled.img`
     width: 50%;
+  ${mobile({ marginBottom: "2rem" })}
 `
 
 export default Footer;

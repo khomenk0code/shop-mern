@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import {ICategories} from "../data";
+import {mobile} from "../utils/responsive";
+import {StyledLink} from "./header.component";
 
 
 type CategoriesItemProps = {
@@ -14,7 +16,7 @@ const CategoriesItem:React.FC<CategoriesItemProps>  = ({item}) => {
             <Image src={item.img}/>
             <Info>
                 <Title>{item.title}</Title>
-                <Button>Shop now</Button>
+                <StyledLink to="/products"><Button>Shop now</Button></StyledLink>
             </Info>
         </Container>
 
@@ -22,46 +24,44 @@ const CategoriesItem:React.FC<CategoriesItemProps>  = ({item}) => {
 };
 
 const Container = styled.div`
-flex: 1;
+  flex: 1;
   margin: 3px;
   height: 70vh;
   position: relative;
-`
+`;
+
 const Image = styled.img`
-width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-`
+  ${mobile({ height: "40vh" })}
+
+`;
+
 const Info = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 90%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
-`
-const Title = styled.h2`
-  color: #fff;
-  margin-bottom: 1rem;
-`
-const Button = styled.button`
+  justify-content: center;
+`;
 
-  padding: .5rem;
-  
-  background-color: rgba(255, 255, 255, .8);
-  color: #808080;
+const Title = styled.h1`
+  color:white;
+  margin-bottom: 20px;
+`;
+
+const Button = styled.button`
+  border:none;
+  padding: 10px;
+  background-color: white;
+  color:gray;
   cursor: pointer;
   font-weight: 600;
-  border: none;
-  text-transform: uppercase;
-
-  &:hover {
-    background-color: #fff;
-
-  }
-`
+`;
 
 export default CategoriesItem;

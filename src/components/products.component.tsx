@@ -16,6 +16,7 @@ const Products: React.FC = () => {
 };
 
 const Container = styled.div`
+  margin: 3rem 0;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;

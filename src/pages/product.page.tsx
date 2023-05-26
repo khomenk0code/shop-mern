@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../components/navbar.component";
+import Navbar from "../components/header.component";
 import Announcement from "../components/anonouncement.component";
 import Footer from "../components/footer";
 import Newsletter from "../components/newsletter.component";
 import {Add, Remove} from "@mui/icons-material";
 import styled from "styled-components";
-import {mobile} from "./responsive";
+import {mobile} from "../utils/responsive";
 
 const Container = styled.div``;
 

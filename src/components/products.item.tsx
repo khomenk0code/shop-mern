@@ -3,6 +3,7 @@ import React from 'react';
 import styled from "styled-components";
 import {IPopularProducts} from "../data";
 import {FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined} from "@mui/icons-material";
+import {StyledLink} from "./header.component";
 
 type CategoriesItemProps = {
     item: IPopularProducts
@@ -17,7 +18,7 @@ const ProductsItem: React.FC<CategoriesItemProps> = ({item}) => {
             <Image src={item.img}/>
             <Info>
                 <Icon>
-                    <SearchOutlined/>
+                    <StyledLink to="/product"><SearchOutlined/></StyledLink>
                 </Icon>
                 <Icon>
                     <ShoppingCartOutlined/>

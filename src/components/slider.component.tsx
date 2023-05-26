@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleArrowLeft, faCircleArrowRight} from "@fortawesome/free-solid-svg-icons";
 import {ISlide, sliderItems} from "../data";
+import {mobile} from "../utils/responsive";
 
 type ArrowProps = {
     direction: "left" | "right";
@@ -66,6 +67,8 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  margin-bottom: 3rem;
+  ${mobile({ display: "none" })}
 `;
 
 const Wrapper = styled.div<WrapperProps>`
